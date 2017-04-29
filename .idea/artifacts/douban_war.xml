@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="douban:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Douban.war">
+      <element id="artifact" artifact-name="douban:war exploded" />
+    </root>
+  </artifact>
+</component>
