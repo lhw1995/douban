@@ -45,13 +45,13 @@ public class FilmCriticsController {
 
     /**
      *
-     * @param filmId 影评Id
+     * @param filmCriticsId 影评Id
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "film_critics/{filmId}", method = RequestMethod.DELETE)
-    public Object deleteFilmCritics(@PathVariable("filmId") Long filmId) {
-        int success = filmCriticsService.deleteFilmCriticsById(filmId);
+    @RequestMapping(value = "film_critics/{film_critics_id}", method = RequestMethod.DELETE)
+    public Object deleteFilmCritics(@PathVariable("film_critics_id") Long filmCriticsId) {
+        int success = filmCriticsService.deleteFilmCriticsById(filmCriticsId);
         Map<String,Object> map = new HashMap<>();
         if (success > 0) {
             map.put("操作状态","成功");
@@ -63,15 +63,29 @@ public class FilmCriticsController {
 
     /**
      * 获得本电影本页影评
-     * @param filmId 影评Id
+     * @param filmId 电影Id
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "film_critics/{filmId}", method = RequestMethod.GET)
-    public Object getFilmCriticsList(@PathVariable("filmId") Long filmId,Page page) {
+    @RequestMapping(value = "film_critics/{film_id}", method = RequestMethod.GET)
+    public Object getFilmCriticsList(@PathVariable("film_id") Long filmId,Page page) {
         List<FilmCritics> filmCriticsList = filmCriticsService.getFilmCriticsList(filmId,page);
         Map<String,Object> map = new HashMap<>();
         map.put("本页影评",filmCriticsList);
+        return map;
+    }
+
+    /**
+     * 获得本影评详情
+     * @param filmCriticsId 影评Id
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "film_critics/detail/{film_critics_id}", method = RequestMethod.GET)
+    public Object getFilmCriticsDetail(@PathVariable("film_critics_id") Long filmCriticsId) {
+        FilmCritics filmCritics = filmCriticsService.getFilmCriticsById(filmCriticsId);
+        Map<String,Object> map = new HashMap<>();
+        map.put("影评详情",filmCritics);
         return map;
     }
 
