@@ -1,4 +1,4 @@
-package com.douban.entity;
+package com.douban.entity.po;
 
 import java.util.Date;
 

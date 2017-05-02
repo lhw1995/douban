@@ -1,17 +1,14 @@
 package com.douban.controller;
 
-import com.douban.entity.FilmCritics;
+import com.douban.entity.po.FilmCritics;
 import com.douban.entity.vo.Page;
 import com.douban.service.filmcritics.FilmCriticsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

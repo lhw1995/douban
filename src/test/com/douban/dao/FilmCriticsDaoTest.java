@@ -1,6 +1,6 @@
 package com.douban.dao;
 
-import com.douban.entity.FilmCritics;
+import com.douban.entity.po.FilmCritics;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -8,8 +8,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 import java.util.Date;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by lhw2 on 2017/4/30.

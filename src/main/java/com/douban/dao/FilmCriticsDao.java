@@ -1,6 +1,6 @@
 package com.douban.dao;
 
-import com.douban.entity.FilmCritics;
+import com.douban.entity.po.FilmCritics;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

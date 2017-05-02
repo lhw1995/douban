@@ -1,10 +1,9 @@
 package com.douban.service.filmcritics;
 
-import com.douban.entity.FilmCritics;
+import com.douban.entity.po.FilmCritics;
 import com.douban.entity.vo.Page;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 import java.util.Map;
 
 /**

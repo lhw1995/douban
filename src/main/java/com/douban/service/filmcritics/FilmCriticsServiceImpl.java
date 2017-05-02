@@ -1,7 +1,7 @@
 package com.douban.service.filmcritics;
 
 import com.douban.dao.FilmCriticsDao;
-import com.douban.entity.FilmCritics;
+import com.douban.entity.po.FilmCritics;
 import com.douban.entity.vo.Page;
 import org.springframework.stereotype.Service;
 
