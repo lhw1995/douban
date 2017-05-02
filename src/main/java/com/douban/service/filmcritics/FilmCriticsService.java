@@ -20,10 +20,9 @@ public interface FilmCriticsService {
 
     /**
      * 添加影评
-     * @param filmCritics
      * @return 添加的行数
      */
-    Integer insertFilmCritics(FilmCritics filmCritics,HttpSession session);
+    Integer insertFilmCritics(FilmCritics filmCritics, HttpSession session);
 
     /**
      * 删除影评

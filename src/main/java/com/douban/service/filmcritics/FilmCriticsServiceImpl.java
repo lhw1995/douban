@@ -25,7 +25,7 @@ public class FilmCriticsServiceImpl implements FilmCriticsService {
         return filmCriticsDao.getFilmCriticsById(id);
     }
 
-    public Integer insertFilmCritics(FilmCritics filmCritics,HttpSession session) {
+    public Integer insertFilmCritics(FilmCritics filmCritics, HttpSession session) {
         // TODO: 2017/4/30 从session中获取当前用户id
         filmCritics.setUserId(1L);
         filmCritics.setCreateTime(new Date());
