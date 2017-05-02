@@ -28,4 +28,10 @@
         limit #{startNum},#{pageSize}
     </select>
 
+    <select id="getFilmCriticsTotalCount" resultType="Long">
+        SELECT count(*)
+        FROM film_critics
+        WHERE film_id = #{filmId}
+    </select>
+
 </mapper>

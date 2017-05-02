@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by lhw2 on 2017/4/30.
@@ -34,9 +36,20 @@ public class FilmCriticsServiceImpl implements FilmCriticsService {
         return filmCriticsDao.deleteFilmCriticsById(id);
     }
 
-    public List<FilmCritics> getFilmCriticsList(Long filmId, Page page) {
+    public Map<String,Object> getFilmCriticsList(Long filmId, Page page) {
+        //获得该页影评
         Long startNum = (page.getCurrPageNo() - 1) * page.getPageSize();
         Long pageSize = page.getPageSize();
-        return filmCriticsDao.getFilmCriticsList(filmId,startNum,pageSize);
+        List<FilmCritics> filmCriticsList = filmCriticsDao.getFilmCriticsList(filmId,startNum,pageSize);
+        //获得分页信息
+        Long totalCount = filmCriticsDao.getFilmCriticsTotalCount(filmId);
+        Long totalPageCount = totalCount % pageSize > 0? totalCount/pageSize+1 : totalCount/pageSize;
+        page.setTotalCount(totalCount);
+        page.setTotalPageCount(totalPageCount);
+        //返回Json
+        Map<String,Object> map = new HashMap<>();
+        map.put("影评列表",filmCriticsList);
+        map.put("分页信息",page);
+        return map;
     }
 }

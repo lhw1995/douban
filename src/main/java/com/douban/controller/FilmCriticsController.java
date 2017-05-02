@@ -69,9 +69,7 @@ public class FilmCriticsController {
     @ResponseBody
     @RequestMapping(value = "film_critics/{film_id}", method = RequestMethod.GET)
     public Object getFilmCriticsList(@PathVariable("film_id") Long filmId,Page page) {
-        List<FilmCritics> filmCriticsList = filmCriticsService.getFilmCriticsList(filmId,page);
-        Map<String,Object> map = new HashMap<>();
-        map.put("本页影评",filmCriticsList);
+        Map<String,Object> map = filmCriticsService.getFilmCriticsList(filmId,page);
         return map;
     }
 

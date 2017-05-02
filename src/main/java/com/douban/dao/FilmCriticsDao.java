@@ -38,4 +38,11 @@ public interface FilmCriticsDao {
      * @return
      */
     List<FilmCritics> getFilmCriticsList(@Param("filmId") Long filmId, @Param("startNum") Long startNum, @Param("pageSize") Long pageSize);
+
+    /**
+     *
+     * @param filmId 电影Id
+     * @return
+     */
+    Long getFilmCriticsTotalCount(Long filmId);
 }

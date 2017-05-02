@@ -5,6 +5,7 @@ import com.douban.entity.vo.Page;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by lhw2 on 2017/4/30.
@@ -36,5 +37,5 @@ public interface FilmCriticsService {
      * @param filmId 电影id
      * @return
      */
-    List<FilmCritics> getFilmCriticsList(Long filmId, Page page);
+    Map<String,Object> getFilmCriticsList(Long filmId, Page page);
 }
