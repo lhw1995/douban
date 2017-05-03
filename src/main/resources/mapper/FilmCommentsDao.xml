@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.douban.dao.FilmCommentsDao">
+
+    <insert id="insertFilmComments">
+        insert into
+        film_comments(score,content,film_id,user_id,create_time)
+        VALUES (#{score},#{content},#{filmId},#{userId},#{createTime})
+    </insert>
+
+    <delete id="deleteFilmCommentsById">
+        delete from film_comments where id = #{id}
+    </delete>
+
+    <select id="getFilmCommentsList" resultType="FilmComments">
+        SELECT *
+        FROM film_comments
+        WHERE film_id = #{filmId}
+        limit #{startNum},#{pageSize}
+    </select>
+
+    <select id="getFilmCommentsTotalCount" resultType="Long">
+        SELECT count(*)
+        FROM film_comments
+        WHERE film_id = #{filmId}
+    </select>
+
+</mapper>

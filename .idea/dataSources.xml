@@ -15,5 +15,12 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="dataSource" uuid="c65ec045-be82-4546-9be9-2d7f0d455068">
+      <imported>true</imported>
+      <configured-by-url>true</configured-by-url>
+      <remarks>$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml</remarks>
+      <jdbc-driver>com.mysql.jdbc.Driver.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/douban?useUnicode=true&amp;characterEncoding=utf8ysql://127.0.0.1:3306/douban?useUnicode=true&amp;characterEncoding=utf8</jdbc-url>
+    </data-source>
   </component>
 </project>
