@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.douban.dao.UserDao">
+
+    <insert id="insertUser">
+        INSERT INTO
+        user(username,password,nickname,iconurl,status)
+        VALUES (#{username},#{password},#{nickname},#{iconurl},#{status})
+    </insert>
+
+    <delete id="deleteUserById">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
+
+    <update id="updateUser">
+        UPDATE user SET username=#{username},password=#{password},
+        nickname=#{nickname},iconurl=#{iconurl},status=#{status}
+        WHERE id=#{id}
+    </update>
+
+    <select id="getUserById" resultType="User">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <select id="getUserByUsername" resultType="User">
+        SELECT * FROM user WHERE username = #{username}
+    </select>
+
+    <select id="getUsersByFuzzyUsername" resultType="User">
+        SELECT * FROM user WHERE username like #{fuzzyUsername}
+    </select>
+
+    <select id="getUsersByNickname" resultType="User">
+        SELECT * FROM user WHERE nickname = #{nickname}
+    </select>
+
+    <select id="getUsersByFuzzyNickname" resultType="User">
+        SELECT * FROM user WHERE nickname like #{fuzzyNickname}
+    </select>
+
+    <select id="getUsersByStatus" resultType="User">
+        SELECT * FROM user WHERE status = #{status}
+    </select>
+
+</mapper>
