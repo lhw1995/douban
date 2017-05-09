@@ -8,16 +8,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class TestController {
-    @RequestMapping("/test")
-    public String test(){
-
-        return "index";
+    @RequestMapping(value = "login")
+    public String login(){
+        return "login";
     }
 
-
-    @RequestMapping(value = "index")
+    @RequestMapping(value = "/index")
     public String index(){
         return "index";
     }
+
+    @RequestMapping(value = "longView")
+    public String longView(){
+        return "longView";
+    }
+
+    @RequestMapping(value = "pinglun")
+    public String pinglun(){
+        return "pinglun";
+    }
+
+    @RequestMapping(value = "ranking")
+    public String ranking(){
+        return "Rangking";
+    }
+
+    @RequestMapping(value = "review")
+    public String review(){
+        return "Review";
+    }
+
 }
 

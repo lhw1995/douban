@@ -28,7 +28,7 @@ public class FilmCriticsController {
      */
     @ResponseBody
     @RequestMapping(value = "film_critics", method = RequestMethod.POST)
-    public Object insertFilmCritics(FilmCritics filmCritics, HttpSession session) {
+    public Object insertFilmCritics(@RequestBody FilmCritics filmCritics, HttpSession session) {
         int success = filmCriticsService.insertFilmCritics(filmCritics,session);
         Map<String,Object> map = new HashMap<>();
         if (success > 0) {
@@ -63,8 +63,11 @@ public class FilmCriticsController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "film_critics/{film_id}", method = RequestMethod.GET)
-    public Object getFilmCriticsList(@PathVariable("film_id") Long filmId,Page page) {
+    @RequestMapping(value = "film_critics/{film_id}", method = RequestMethod.POST)
+    public Object getFilmCriticsList(@PathVariable("film_id") Long filmId,@RequestBody Map<String,Object> pageMap) {
+        Page page = new Page();
+        page.setCurrPageNo(Long.valueOf(pageMap.get("currPageNo").toString()));
+        page.setPageSize(Long.valueOf(pageMap.get("pageSize").toString()));
         Map<String,Object> map = filmCriticsService.getFilmCriticsList(filmId,page);
         return map;
     }

@@ -13,8 +13,8 @@
 
     <insert id="insertFilmCritics">
         insert into
-        film_critics(score,title,content,film_id,user_id,create_time)
-        VALUES (#{score},#{title},#{content},#{filmId},#{userId},#{createTime})
+        film_critics(score,title,content,praise_count,film_id,user_id,create_time)
+        VALUES (#{score},#{title},#{content},#{praiseCount},#{filmId},#{userId},#{createTime})
     </insert>
 
     <delete id="deleteFilmCriticsById">
@@ -25,6 +25,7 @@
         SELECT *
         FROM film_critics
         WHERE film_id = #{filmId}
+        order by create_time desc
         limit #{startNum},#{pageSize}
     </select>
 

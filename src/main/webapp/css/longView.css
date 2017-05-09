@@ -1,0 +1,121 @@
+/*/////////////////////长评////////////////////////////////////*/
+#longView {
+    width: 900px;
+    height: 800px;
+    border: 1px solid #000;
+    background: white;
+    /*背景图片设置:色相，饱和度，亮度，透明度*/
+    background: hsla(0,1000%,100%,0.9);
+    box-shadow: 10px 10px 10px #878787;
+    margin:20px auto;
+}
+h1 {
+    word-wrap: break-word;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #494949;
+    margin: 0;
+    padding: 0 0 15px 0;
+    line-height: 1.1;
+}
+.score_head, .score_fool {
+    position:relative;
+    width: 900px;
+    height: 40px;
+    background-color: #C6E2FF;
+    
+}
+    .score_head span {
+        position:relative;
+        margin-top:8px;
+        margin-left:8px;
+    }
+
+    .score_head a {
+        text-decoration: none;
+        position:relative;
+        float: right;
+        background-color:white;
+    }
+    .score_head a:hover {
+            background-color: #37a;
+            text-decoration: none;
+    }
+
+.score_fool {
+    position:relative;
+    bottom: 0px;
+    top: 402px;
+}
+
+    .score_fool input {
+        position:relative;
+        border:none;
+        float: right;
+        margin-top: 10px;
+    }
+
+.score_mid {
+    position:relative;
+    width: 700px;
+    height: 320px;
+}
+    .score_mid .s0 {
+        position:relative;
+        top: 50px;
+        left: 50px;
+    }
+
+    .score_mid .s1 {
+        position:relative;
+        top: 100px;
+        left: -215px;
+    }
+
+    .score_mid .s2 {
+        position:absolute;
+        top: 150px;
+        left: 50px;
+    }
+
+    .score_mid .title {
+        position:relative;
+        top: 50px;
+        left: 100px;
+        width:170px;
+    }
+    .score_mid .score {
+        position:relative;
+        top: 100px;
+        left: -164px;
+        width:170px;
+    }
+.upload {
+     position:relative;
+     top: 150px;
+     left: 0em;
+     border:none;
+}
+    .upload:hover {
+        background:#C6E2FF;
+    }
+
+    .score_mid textarea {
+        position:relative;
+        top: 180px;
+        left: 3.3em;
+        width: 550px;
+        height: 480px;
+        resize: none;
+    }
+
+.h {
+    position:relative;
+    top: 900px;
+    padding-top: 40em;
+    margin-top: 1200px;
+    width: 300px;
+    height: 300px;
+}
+

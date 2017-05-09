@@ -9,6 +9,7 @@ public class FilmComments {
     private Long id;
     private Integer score;
     private String content;
+    private Integer praiseCount;
     private Long filmId;
     private Long userId;
     private Date createTime;
@@ -61,12 +62,21 @@ public class FilmComments {
         this.createTime = createTime;
     }
 
+    public Integer getPraiseCount() {
+        return praiseCount;
+    }
+
+    public void setPraiseCount(Integer praiseCount) {
+        this.praiseCount = praiseCount;
+    }
+
     @Override
     public String toString() {
         return "FilmComments{" +
                 "id=" + id +
                 ", score=" + score +
                 ", content='" + content + '\'' +
+                ", praiseCount=" + praiseCount +
                 ", filmId=" + filmId +
                 ", userId=" + userId +
                 ", createTime=" + createTime +

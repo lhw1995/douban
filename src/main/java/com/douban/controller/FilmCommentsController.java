@@ -1,13 +1,11 @@
 package com.douban.controller;
 
 import com.douban.entity.po.FilmComments;
+import com.douban.entity.po.FilmCritics;
 import com.douban.entity.vo.Page;
 import com.douban.service.filmcomments.FilmCommentsService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -24,12 +22,16 @@ public class FilmCommentsController {
 
     /**
      * 添加短评
-     * @param filmComments
+     * @param
      * @return
      */
     @ResponseBody
     @RequestMapping(value = "film_comments",method = RequestMethod.POST)
-    public Object insertFilmComments(FilmComments filmComments) {
+    public Object insertFilmComments(@RequestBody Map<String,Object> params) {
+        FilmComments filmComments = new FilmComments();
+        filmComments.setScore(Integer.valueOf (params.get("score").toString()));
+        filmComments.setContent((String) (params.get("content")));
+        filmComments.setFilmId(Long.valueOf(params.get("filmId").toString()));
         int status = filmCommentsService.insertFilmComments(filmComments);
         Map<String,Object> map = new HashMap<>();
         if (status > 0) {
@@ -64,8 +66,11 @@ public class FilmCommentsController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "film_comments/{film_id}", method = RequestMethod.GET)
-    public Object getFilmCriticsList(@PathVariable("film_id") Long filmId,Page page) {
+    @RequestMapping(value = "film_comments/{film_id}", method = RequestMethod.POST)
+    public Object getFilmCriticsList(@PathVariable("film_id") Long filmId,@RequestBody Map<String,Object> pageMap) {
+        Page page = new Page();
+        page.setCurrPageNo(Long.valueOf(pageMap.get("currPageNo").toString()));
+        page.setPageSize(Long.valueOf(pageMap.get("pageSize").toString()));
         Map<String,Object> map = filmCommentsService.getFilmCommentsList(filmId,page);
         return map;
     }

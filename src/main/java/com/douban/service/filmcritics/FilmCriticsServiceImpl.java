@@ -29,6 +29,7 @@ public class FilmCriticsServiceImpl implements FilmCriticsService {
         // TODO: 2017/4/30 从session中获取当前用户id
         filmCritics.setUserId(1L);
         filmCritics.setCreateTime(new Date());
+        filmCritics.setPraiseCount(0);
         return filmCriticsDao.insertFilmCritics(filmCritics);
     }
 
@@ -48,8 +49,8 @@ public class FilmCriticsServiceImpl implements FilmCriticsService {
         page.setTotalPageCount(totalPageCount);
         //返回Json
         Map<String,Object> map = new HashMap<>();
-        map.put("影评列表",filmCriticsList);
-        map.put("分页信息",page);
+        map.put("filmCriticsList",filmCriticsList);
+        map.put("page",page);
         return map;
     }
 }

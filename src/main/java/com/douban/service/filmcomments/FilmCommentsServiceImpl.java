@@ -7,6 +7,7 @@ import com.douban.entity.vo.Page;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -35,8 +36,8 @@ public class FilmCommentsServiceImpl implements FilmCommentsService{
         page.setTotalPageCount(totalPageCount);
         //返回Json
         Map<String,Object> map = new HashMap<>();
-        map.put("影评列表",filmCommentsList);
-        map.put("分页信息",page);
+        map.put("filmCommentsList",filmCommentsList);
+        map.put("page",page);
         return map;
     }
 
@@ -45,6 +46,7 @@ public class FilmCommentsServiceImpl implements FilmCommentsService{
         // TODO: 2017/4/30 从session中获取当前用户id
         filmComments.setUserId(1L);
         filmComments.setCreateTime(new Date());
+        filmComments.setPraiseCount(0);
         return filmCommentsDao.insertFilmComments(filmComments);
     }
 
