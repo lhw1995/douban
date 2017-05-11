@@ -10,7 +10,11 @@
 /*  Shake animation  */
 
 @charset "UTF-8";
+body{
+	background:url(../img/4.jpg);
+}
 .container{
+	height:80%;
 	z-index:100000;
 }
 .animated {
@@ -206,7 +210,7 @@
     }
 }
 
-.big-login, .big-register{
+.big-login, .big-register,.big-back{
     background-color: #00bbff;
     color: #FFFFFF;
     border-radius: 7px;
@@ -218,7 +222,7 @@
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
     float:left;
-    margin:10px auto;
+    margin:30px auto;
 }
 .big-login:hover{
     background-color: #00A4E4;
@@ -233,4 +237,18 @@
 	background-color: #00A4E4;
     border-color: #00A4E4;
     color:  #FFFFFF;
+}
+.big-back{
+	float:left;
+	margin-left:-180px;
+	margin-top:140px;
+	background-color: rgba(0,0,0,.0);
+    color: #00bbff;
+    border-color: #00bbff;
+}
+.big-back:hover{
+	background-color: #00A4E4;
+    border-color: #00A4E4;
+    color:  #FFFFFF;
+	
 }

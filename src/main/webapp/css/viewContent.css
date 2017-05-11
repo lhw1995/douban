@@ -1,0 +1,94 @@
+body{
+	 height: 1000px;
+}
+.content{
+	float:left;
+    width: 60%;
+    margin: 40px 20px;
+    
+}
+.comment-time {
+    color: #AAAAAA;
+    font-size: 13px;
+}
+
+.score1 {
+    font-size: 12px;
+}
+
+    .score1 i {
+        color: #7290CC;
+    }
+
+h3 {
+    font-size: 12px;
+    height: auto;
+    overflow: hidden;
+    *zoom: 1;
+    margin: 1.5em 0 1em 0;
+    height: 1.7em;
+    padding-left: 4px;
+    font: 14px Arial, Helvetica, sans-serif;
+    color: #666666;
+    margin-bottom: 1px;
+    line-height: 1.8em;
+    background-color: #f2fbf2;
+}
+
+    h3 a {
+        text-decoration: none;
+        color: #7290CC;
+    }
+.view{
+	line-height: 3.5em;
+    color: #494949;
+    font-size:13px;
+}
+.right{
+	position:fixed;
+	margin: 40px 68%;
+	float:right;
+	width: 30%;
+}
+#films {
+    width: 100%;
+    height: 80px;
+}
+
+    #films img {
+        margin-top: 1em;
+        float: left;
+        margin-left: 2em;
+    }
+
+.right h1 {
+    word-wrap: break-word;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #7290CC;
+    margin: 0;
+    padding: 0 0 15px 0;
+    line-height: 1.1;
+    margin-left: 1.7em;
+}
+
+.inf {
+    float: left;
+    font-size: 12px;
+    margin-left: 2em;
+}
+
+.score {
+    float: left;
+    font-size: 15px;
+    color: #cbc1c1;
+    margin-left: 5em;
+}
+
+    .score span {
+        clear: both;
+        color: #D02090;
+        font-size: 23px;
+        margin-left: 1em;
+    }

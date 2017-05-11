@@ -22,26 +22,27 @@ body {
 }
 </style>
 
-<link href="../../bootstrap3/css/bootstrap.css" rel="stylesheet" />
+<link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
 
-<link href="../../css/login-register.css" rel="stylesheet" />
+<link href="css/login-register.css" rel="stylesheet" />
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
-<script src="../../jquery/jquery-1.10.2.js" type="text/javascript"></script>
-<script src="../../bootstrap3/js/bootstrap.js" type="text/javascript"></script>
-<script src="../../js/login-register.js" type="text/javascript"></script>
+<script src="jquery/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="bootstrap3/js/bootstrap.js" type="text/javascript"></script>
+<script src="js/login-register.js" type="text/javascript"></script>
 
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
 				<a class="btn big-login" data-toggle="modal"
-					href="javascript:void(0)" onclick="openLoginModal();">Log in</a> <a
-					class="btn big-register" data-toggle="modal"
+					href="javascript:void(0)" onclick="openLoginModal();">Log in</a> 
+				<a class="btn big-register" data-toggle="modal"
 					href="javascript:void(0)" onclick="openRegisterModal();">Register</a>
-			     <a href="index">返回</a>
+			     <a class="btn big-back"href="index">返回</a>
 			</div>
 			<div class="col-sm-4"></div>
 		</div>
@@ -74,8 +75,8 @@ body {
 								<div class="error"></div>
 								<div class="form loginBox">
 									<form method="post" action="/login" accept-charset="UTF-8">
-										<input id="email" class="form-control" type="text"
-											placeholder="Email" name="email"> <input
+										<input id="Username" class="form-control" type="text"
+											placeholder="Username" name="Username"> <input
 											id="password" class="form-control" type="password"
 											placeholder="Password" name="password"> <input
 											class="btn btn-default btn-login" type="button" value="Login"
@@ -89,8 +90,8 @@ body {
 								<div class="form">
 									<form method="post" html="{:multipart=>true}"
 										data-remote="true" action="/register" accept-charset="UTF-8">
-										<input id="email" class="form-control" type="text"
-											placeholder="Email" name="email"> <input
+										<input id="Username" class="form-control" type="text"
+											placeholder="Username" name="Username"> <input
 											id="password" class="form-control" type="password"
 											placeholder="Password" name="password"> <input
 											id="password_confirmation" class="form-control"

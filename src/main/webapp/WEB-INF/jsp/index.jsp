@@ -22,6 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  <script type="text/javascript" src="../../js/index.js"></script>
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
 	<div class="search d7">
 	<form>
 	  <input type="text" placeholder="搜索从这里开始..."/>
@@ -31,11 +32,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="wrapper"><!-- 最外层部分 -->
     <div id="banner" class="ul1"><!-- 轮播部分 -->
         <ul class="imgList"><!-- 图片部分 -->
-            <li><a href="pinglun"><img class="img" src="../../img/imgturn/1.jpg" width="1000px" height="350px" alt="Trave"/></a></li>
-            <li><a href="pinglun"><img class="img" src="../../img/imgturn/2.jpg" width="1000px" height="350px" alt="Trave"/></a></li>
-            <li><a href="pinglun"><img class="img" src="../../img/imgturn/3.jpg" width="1000px" height="350px" alt="Trave"/></a></li>
-            <li><a href="pinglun"><img class="img" src="../../img/imgturn/4.jpg" width="1000px" height="350px" alt="Trave"/></a></li>
-            <li><a href="pinglun"><img class="img" src="../../img/imgturn/5.jpg" width="1000px" height="350px" alt="Trave"/></a></li>
+            <li><a href="pinglun"><img class="img" src="../../img/imgturn/1.jpg" width="1200px" height="450px" alt="Trave"/></a></li>
+            <li><a href="pinglun"><img class="img" src="../../img/imgturn/2.jpg" width="1200px" height="450px" alt="Trave"/></a></li>
+            <li><a href="pinglun"><img class="img" src="../../img/imgturn/3.jpg"  width="1200px" height="450px" alt="Trave"/></a></li>
+            <li><a href="pinglun"><img class="img" src="../../img/imgturn/4.jpg" width="1200px" height="450px" alt="Trave"/></a></li>
+            <li><a href="pinglun"><img class="img" src="../../img/imgturn/5.jpg" width="1200px" height="450px" alt="Trave"/></a></li>
         </ul>
         <img src="../../img/imgturn/left.jpg" width="20px" height="40px" id="prev"/>
         <img src="../../img/imgturn/right.jpg" width="20px" height="40px" id="next"/>
@@ -64,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</ul>
 		</nav> 
 		
-		<p class="pp">________________________________________________________________________</p>
+		<p class="pp">_________________________________________________________________________________________</p>
 		
 		<div id="movie-onshow" class="div2" >
             <% for (int i = 0; i < 6; i++) {  %>
@@ -87,7 +88,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 		</div>
 
-		<div id="movie-next" class="div2" >
+		<div id="movie-next"class="div2" >
             <%for (int i = 0; i < 6; i++) {  %>
 			<div class="information">
 				<div class="movie" >
@@ -120,8 +121,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="reconmend">
 				<img src="../../img/reconmend/1.jpg" style="width:300px;height:220px;float:left;"/>
 				<div class="reconmend-pic">
-					<img src="../../img/reconmend/2.jpg" style="width:130px;height:108px;"/>
-					<img src="../../img/reconmend/3.jpg" style="width:130px;height:108px;"/>
+					<img src="../../img/reconmend/2.jpg"style="width:130px;height:108px;"/>
+					<img src="../../img/reconmend/3.jpg"style="width:130px;height:108px;"/>
 				</div>
 				<div>
 					<span>热门新片推荐</span>
@@ -134,8 +135,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="reconmend">
 				<img src="../../img/reconmend/5.jpg" style="width:300px;height:220px;float:left;"/>
 				<div class="reconmend-pic">
-					<img src="../../img/reconmend/4.jpg" style="width:130px;height:108px;"/>
-					<img src="../../img/reconmend/6.jpg" style="width:130px;height:108px;"/>
+					<img src="../../img/reconmend/4.jpg"style="width:130px;height:108px;"/>
+					<img src="../../img/reconmend/6.jpg"style="width:130px;height:108px;"/>
 				</div>
 				<div>
 					<span>内地影视票房TOP(10)</span>
@@ -147,8 +148,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="reconmend">
 				<img src="../../img/reconmend/7.jpg" style="width:300px;height:220px;float:left;"/>
 				<div class="reconmend-pic">
-					<img src="../../img/reconmend/8.jpg" style="width:130px;height:108px;"/>
-					<img src="../../img/reconmend/9.jpg" style="width:130px;height:108px;"/>
+					<img src="../../img/reconmend/8.jpg"style="width:130px;height:108px;"/>
+					<img src="../../img/reconmend/9.jpg"style="width:130px;height:108px;"/>
 				</div>
 				<div>
 					<span>全球影视票房TOP(10)</span>
@@ -160,8 +161,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="reconmend">
 				<img src="../../img/reconmend/10.jpg" style="width:300px;height:220px;float:left;"/>
 				<div class="reconmend-pic">
-					<img src="../../img/reconmend/12.jpg" style="width:130px;height:108px;"/>
-					<img src="../../img/reconmend/11.jpg" style="width:130px;height:108px;"/>
+					<img src="../../img/reconmend/12.jpg"style="width:130px;height:108px;"/>
+					<img src="../../img/reconmend/11.jpg"style="width:130px;height:108px;"/>
 				</div>
 				<div>
 					<span>穿越回过去与熟人相遇10部金典</span>
@@ -186,6 +187,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         
         <div class="score_fool"><input id="save"type="button" value="保存" onclick="save();"/></div>
     </div>
-
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

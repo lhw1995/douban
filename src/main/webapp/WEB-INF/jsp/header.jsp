@@ -31,16 +31,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<nav class="tm-nav">
 						<ul>
 							<li><a href="index" style="text-decoration:none"
-                                   target="ad">首页</a>
+								>首页</a>
 							</li>
 							<li><a href="Review" style="text-decoration:none"
-                                   target="ad">评论</a>
+								>评论</a>
 							</li>
 							<li><a href="Ranking" style="text-decoration:none"
-                                   target="ad">排行榜</a>
+								>排行榜</a>
 							</li>
 							<li><a href="Classify" style="text-decoration: none"
-								target="ad">分类</a>
+								>分类</a>
 							</li>
 						</ul>
 					</nav>
@@ -59,10 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 	</div>
-	<iframe name="ad" id="mainFrame" src="index" width="1345"
-            scrolling="no" frameborder="0"></iframe>
-	<iframe name="ad" id="Iframe1" src="footer" height="130"
-            width="1345" scrolling="no" frameborder="0"></iframe>
+	
 </body>
 <script type="text/javascript">
         startInit('mainFrame', 560);

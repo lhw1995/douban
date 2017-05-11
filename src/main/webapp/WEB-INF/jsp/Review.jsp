@@ -1,5 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -10,18 +9,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title></title>
+    <title>豆瓣最受欢迎的影评</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<link rel="stylesheet" type="text/css" href="../../css/Review.css"/>
+	<link rel="stylesheet" type="text/css" href="css/Review.css"/>
     <script src="../../js/Review.js"></script>
     <script src="../../js/pinglun.js"></script>
 </head>
 <body>
+<jsp:include page="header.jsp"></jsp:include>
     <div id="content">
         <h1>豆瓣最受欢迎的影评</h1>
         <div>
@@ -30,18 +30,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <li class="active">新片评论</li>
             </ul>
         </div>
-        <%--短评--%>
-
+        <%for (int i = 0; i < 5; i++) { %>
         <div class="intent">
             <a  href="pinglun">        
-                <img alt="最好的我们" title="最好的我们" src="../../img/imgturn/1.jpg" style="width:100px;height:140px;"/>
+                <img alt="最好的我们" title="最好的我们" src="../../img/imgturn/1.jpg"style="width:100px;height:140px;"/>     
             </a>
             <header class="main-hd">
                 <div class="title">
-                     <a href="javascript:;" class="title-link">你曾是少年 你永远是少年</a>
-                     <div class="toggle_review">       
-                           <a class="right1" href="javascript:;" title="展开全文" onclick="showContent()"></a>
-                     </div>
+                     <a href="viewContent" class="title-link">你曾是少年 你永远是少年</a>
+                     
                 </div>
                 <div class="header-more">
                      <a href="javascript:;" class="author"><span >一个屠夫</span> </a>    
@@ -63,7 +60,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   </div>
             </div>
         </div>
-    	</c:forEach>
+    	<% } %>
     </div>
+    <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

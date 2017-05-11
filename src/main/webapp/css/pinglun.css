@@ -1,13 +1,15 @@
 body {
-    height: 2300px;
     width: 80%;
-    margin: 40px auto;
-    margin-bottom:40px;
+    margin: 3em auto;
 }
-
+.ctn{
+	    margin-left: 10em;
+}
 #films {
     width: 100%;
     height: 80px;
+    margin-top: 3em;
+
 }
 
     #films img {
@@ -104,7 +106,7 @@ h1 {
     width: 100%;
     height: 150px;
 }
-/*///////////////////////////////¶ÌÆÀ////////////////////////////////////////*/
+/*///////////////////////////////ï¿½ï¿½ï¿½ï¿½////////////////////////////////////////*/
 .short {
     position: absolute;
     width: 820px;
@@ -152,14 +154,9 @@ h1 {
     width: 600px;
 }
 
-.content2 {
-    width: 600px;
-    display: none;
-}
 
 .content {
     width: 600px;
-    display: block;
 }
 
 .comment-time {
@@ -208,7 +205,7 @@ h3 {
     .others:link {
         color: #206aa0;
     }
-/*/////////////////////////////³¤ÆÀ¡¢¡¢¡¢¡¢¡¢¡¢¡¢¡¢¡¢¡¢¡¢¡¢¡¢¡¢¡¢¡¢¡¢¡¢¡¢*/
+/*/////////////////////////////ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 .long {
     position: absolute;
     width: 820px;
@@ -293,3 +290,6 @@ h3 {
                          left:20px;width:550px;height:150px;resize:none;}
   .h{position: absolute;top: 900px;padding-top: 40em;
     margin-top: 1200px;width: 300px;height: 300px;}
+ .footer{
+ margin-top: 2300px;position:relative;
+ }

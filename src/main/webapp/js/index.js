@@ -65,7 +65,7 @@ function imgturn() {
         }, 5000);
     }
     function changeTo(num) {
-        var goLeft = num * 1000;
+        var goLeft = num * 1500;
         $(".imgList").animate({ left: "-" + goLeft + "px" }, 500);
         $(".infoList").find("li").removeClass("infoOn").eq(num).addClass("infoOn");
         $(".indexList").find("li").removeClass("indexOn").eq(num).addClass("indexOn");

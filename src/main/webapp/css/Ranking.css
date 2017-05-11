@@ -5,12 +5,13 @@ body{
     background-color:white;
 }
 #content {
-   margin: 0 auto;
-   width:100%;background-color:white;
+	margin-top:3em;
+   margin-left:-70px;
+   width:60%;background-color:white;
 }
 .indent {
     margin-left:100px;
-    height:200px;width:900px;
+    height:200px;width:100%;
     margin-top:0;
 }
 .description {
@@ -20,10 +21,11 @@ body{
     margin-top:-200px;
 }
 .nbg{
+	font: 14px Arial, Helvetica, sans-serif;
     width:730px;
     height:30px;
     padding-left:1em;
-    text-decoration:none;font-size:20px;color:#030303; font-family:"Î¢ÈíÑÅºÚ";
+    text-decoration:none;font-size:20px;color:#030303;
 }
     .nbg:hover {
         background-color:#63B8FF;
@@ -40,11 +42,63 @@ h1 {color:#515151;}
 .pl{
     width:92%;
     height:100px;
-    padding-left:2em; font-family:"ËÎÌå";font-size:15px;
+    padding-left:2em; font-size:15px;
 }
 .description span {
-    padding-left:1em;font-family:"ËÎÌå";font-size:20px;
+    padding-left:1em;font-size:20px;
 }
 .description span:hover{
    color:#228B22;
 }
+/*///////////////////////////////////////////right//////////////////*/
+.rights{
+	width:30%;
+	float:right;
+	margin-top:-1300px;
+	margin-left:70%;
+	position:fixed;
+	
+}
+#films {
+    width: 100%;
+    height: 80px;
+}
+
+    #films img {
+        margin-top: 1em;
+        float: left;
+        margin-left: 2em;
+    }
+
+.rights h1 {
+    word-wrap: break-word;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #7290CC;
+    margin: 0;
+    padding: 0 0 15px 0;
+    line-height: 1.1;
+    margin-left: 1.7em;
+}
+
+.inf {
+    float: left;
+    font-size: 12px;
+    margin-left: 2em;
+}
+
+.scores {
+    float: left;
+    font-size: 15px;
+    color: #cbc1c1;
+    margin-left: 5em;
+}
+
+    .scores span {
+        clear: both;
+        color: #D02090;
+        font-size: 23px;
+        margin-left: 1em;
+    }
+    

@@ -54,6 +54,7 @@ function save() {
     if (!re.test(score)) {
         tip = "评分只能输入1~10";
         alert(tip);
+        return;
     }
     //添加短评
     var filmId = $("input[name='filmId']").val();

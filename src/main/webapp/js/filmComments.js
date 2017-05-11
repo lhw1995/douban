@@ -37,7 +37,8 @@ $(document).ready(function () {
 
         }
     })
-})
+});
+
 function getStar(score) {
     var star2Flag = false;
     if (score%2 != 0){
