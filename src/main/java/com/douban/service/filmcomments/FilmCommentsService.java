@@ -4,6 +4,7 @@ import com.douban.entity.po.FilmComments;
 import com.douban.entity.vo.Page;
 import org.apache.ibatis.annotations.Param;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -25,7 +26,7 @@ public interface FilmCommentsService {
      * @param filmComments 电影短评
      * @return
      */
-    int insertFilmComments(FilmComments filmComments);
+    int insertFilmComments(FilmComments filmComments, HttpSession session);
 
     /**
      *删除短评

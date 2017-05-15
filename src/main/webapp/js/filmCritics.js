@@ -8,7 +8,7 @@ $(document).ready(function () {
     var filmId = $("input[name='filmId']").val();
 
     var params = {
-        "pageSize":5,
+        "pageSize":3,
         "currPageNo":1
     };
     $.ajax({
@@ -18,27 +18,27 @@ $(document).ready(function () {
         contentType: 'application/json',
         data:JSON.stringify(params),
         success:function (data) {
-            for (var i in data.filmCriticsList){
+            for (var i in data.filmCriticsVoList){
                 /**
                  * 评分后加上星星
                  * @type {boolean}
                  */
-                var _star = getStar(data.filmCriticsList[i].score);
+                var _star = getStar(data.filmCriticsVoList[i].score);
                 var _div = "<div class='comment-item'>"+
                     "<div class='comment'>"+
                     "<h2 class='viewTitle'>"+
-                    "<a class='look' href='#'>"+data.filmCriticsList[i].title+"</a>"+
+                    "<a class='look' href='#'>"+data.filmCriticsVoList[i].title+"</a>"+
                 "</h2>"+
                 "<a class='right1' href='javascript:;' title='展开全文' onclick='showContent()'></a>"+
                     "<h3>"+
                     "<span class='comment-info'> " +
-                    "<a href='#' class='name'>"+data.filmCriticsList[i].filmId+"</a>"+
+                    "<a href='#' class='name'>"+data.filmCriticsVoList[i].userName+"</a>"+
                     "<span>看过</span>" +
-                    " <span class='comment-time' title='2017-02-19 18:24:10'>"+new Date(data.filmCriticsList[i].createTime).toLocaleString()+"</span>" +
-                    "<span class='score1'>&nbsp;&nbsp;评分&nbsp;&nbsp;&nbsp;<i id='I1'></i>"+ data.filmCriticsList[i].score + _star +"</span>"+
+                    " <span class='comment-time' title='2017-02-19 18:24:10'>"+new Date(data.filmCriticsVoList[i].createTime).toLocaleString()+"</span>" +
+                    "<span class='score1'>&nbsp;&nbsp;评分&nbsp;&nbsp;&nbsp;<i id='I1'></i>"+ data.filmCriticsVoList[i].score + _star +"</span>"+
 					"</span>"+
 				"</h3>"+
-				"<div class='content'>"+data.filmCriticsList[i].content+"</div>"+
+				"<div class='content'>"+data.filmCriticsVoList[i].content+"</div>"+
 			    "</div>"+
 		        "</div>";
                 $("#filmCritics").append(_div);

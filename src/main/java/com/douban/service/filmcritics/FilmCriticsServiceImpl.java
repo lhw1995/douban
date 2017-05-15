@@ -1,16 +1,17 @@
 package com.douban.service.filmcritics;
 
 import com.douban.dao.FilmCriticsDao;
+import com.douban.dao.UserDao;
 import com.douban.entity.po.FilmCritics;
+import com.douban.entity.po.User;
+import com.douban.entity.vo.FilmCommentsVo;
+import com.douban.entity.vo.FilmCriticsVo;
 import com.douban.entity.vo.Page;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by lhw2 on 2017/4/30.
@@ -21,13 +22,17 @@ public class FilmCriticsServiceImpl implements FilmCriticsService {
     @Resource
     private FilmCriticsDao filmCriticsDao;
 
+    @Resource
+    private UserDao userDao;
+
+
     public FilmCritics getFilmCriticsById(Long id) {
         return filmCriticsDao.getFilmCriticsById(id);
     }
 
     public Integer insertFilmCritics(FilmCritics filmCritics, HttpSession session) {
-        // TODO: 2017/4/30 从session中获取当前用户id
-        filmCritics.setUserId(1L);
+        User user = (User) session.getAttribute("login");
+        filmCritics.setUserId(Long.valueOf(user.getId()));
         filmCritics.setCreateTime(new Date());
         filmCritics.setPraiseCount(0);
         return filmCriticsDao.insertFilmCritics(filmCritics);
@@ -47,9 +52,25 @@ public class FilmCriticsServiceImpl implements FilmCriticsService {
         Long totalPageCount = totalCount % pageSize > 0? totalCount/pageSize+1 : totalCount/pageSize;
         page.setTotalCount(totalCount);
         page.setTotalPageCount(totalPageCount);
+        //获得用户名
+        List<FilmCriticsVo> filmCriticsVoList = new ArrayList<>();
+        for (int i = 0; i < filmCriticsList.size();i ++) {
+            Long id = filmCriticsList.get(i).getUserId();
+            String userName = userDao.getUserById(Integer.valueOf(id.toString())).getNickname();
+            FilmCriticsVo filmCriticsVo = new FilmCriticsVo(
+                    filmCriticsList.get(i).getId(),
+                    filmCriticsList.get(i).getScore(),
+                    filmCriticsList.get(i).getTitle(),
+                    filmCriticsList.get(i).getContent(),
+                    filmCriticsList.get(i).getPraiseCount(),
+                    filmCriticsList.get(i).getFilmId(),
+                    userName,
+                    filmCriticsList.get(i).getCreateTime());
+            filmCriticsVoList.add(filmCriticsVo);
+        }
         //返回Json
         Map<String,Object> map = new HashMap<>();
-        map.put("filmCriticsList",filmCriticsList);
+        map.put("filmCriticsVoList",filmCriticsVoList);
         map.put("page",page);
         return map;
     }

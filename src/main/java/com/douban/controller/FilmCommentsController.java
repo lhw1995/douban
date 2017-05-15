@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,12 +28,12 @@ public class FilmCommentsController {
      */
     @ResponseBody
     @RequestMapping(value = "film_comments",method = RequestMethod.POST)
-    public Object insertFilmComments(@RequestBody Map<String,Object> params) {
+    public Object insertFilmComments(@RequestBody Map<String,Object> params, HttpSession session) {
         FilmComments filmComments = new FilmComments();
         filmComments.setScore(Integer.valueOf (params.get("score").toString()));
         filmComments.setContent((String) (params.get("content")));
         filmComments.setFilmId(Long.valueOf(params.get("filmId").toString()));
-        int status = filmCommentsService.insertFilmComments(filmComments);
+        int status = filmCommentsService.insertFilmComments(filmComments,session);
         Map<String,Object> map = new HashMap<>();
         if (status > 0) {
             map.put("操作状态","成功");

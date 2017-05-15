@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by lhw2 on 2017/4/29.
  */
 @Controller
-public class TestController {
+public class PageController {
     @RequestMapping(value = "login")
     public String login(){
         return "login";
@@ -36,6 +36,11 @@ public class TestController {
     @RequestMapping(value = "review")
     public String review(){
         return "Review";
+    }
+
+    @RequestMapping(value = "more")
+    public String more(){
+        return "more";
     }
 
 }

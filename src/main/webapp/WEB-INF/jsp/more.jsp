@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -8,7 +9,7 @@
 <html>
 <head>
     <base href="<%=basePath%>">
-    <title>评论</title>
+    <title>更多评论</title>
 
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
@@ -19,16 +20,17 @@
     <!-- 本地加载mock.js文件 -->
     <script src="../../js/mock.js"></script>
     <script src="../../js/pinglun.js"></script>
-    <script src="../../js/filmComments.js"></script>
-    <script src="../../js/filmCritics.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../css/pinglun.css"/>
+    <script src="../../js/moreFilmComments.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/more.css"/>
 </head>
 <body id="body">
 <jsp:include page="header.jsp"></jsp:include>
 <div class="ctn">
+
+    <%--电影信息--%>
     <div id="films">
-        <%--电影id--%>
-        <input type="hidden" name="filmId" value="001"/>
+        <input type="hidden" id="more_film_id" value="001"/>
         <h1>
             <span>独自在夜晚的海边 밤의 해변에서 혼자</span> <span class="year">(2017)</span>
         </h1>
@@ -46,13 +48,11 @@
     <div class="line"></div>
     <div class="gtleft">
         <ul class="myul">
-            <li>
-                <img src="../../img/short.bmp"/>&nbsp;
-                <a class="write" id="writeShort" href="javascript:;" rel="nofollow" onclick="showWriteShort(this.id)">写短评</a>
-            </li>
-            <li>
-                <img src="../../img/add_f.bmp"/>&nbsp;
-                <a class="write" id="write" href="longView.jsp" rel="nofollow">写影评</a></li>
+            <li><img src="../../img/short.bmp"/>&nbsp; <a class="write"
+                                                    id="writeShort" href="javascript:;" rel="nofollow"
+                                                    onclick="showWriteShort(this.id)">写短评</a></li>
+            <li><img src="../../img/add_f.bmp"/>&nbsp; <a class="write"
+                                                    id="write" href="longView" rel="nofollow">写影评</a></li>
         </ul>
     </div>
     <div class="jianjie">
@@ -75,41 +75,49 @@
         </p>
         <a class="writeshort" id="writeshort" href="javascript:;"
            onclick="showWriteShort(this.id)">我要写短评</a>
-
         <div id="filmComments">
             <%--短评区--%>
         </div>
+        <%--<%for (int i = 0; i < 12; i++) { %>
+        <div class="comment-item">
+            <div class="comment">
+                <h3>
+					<span class="comment-info"> <a href="#" class="name">一叶知秋</a>
+						<span>看过</span>
+                        <span class="comment-time " title="2017-02-19 18:24:10">2017-02-19</span> 
+                        <span class="score1">&nbsp;&nbsp;评分&nbsp;&nbsp;&nbsp;<i id="scores"></i>7</span> </span>
+                </h3>
+                <p class="content1">他说会去找他，但她并不相信。在熟识的朋友家吃过饭，她去了海边。她认为朋友不会理解这段感情， 但还是问道：</p>
 
-        <a style="z-index: 999" href="/more" class="others">查看剩余评论</a>
+            </div>
+        </div>
+        <%} %>--%>
     </div>
-
-    <%--写短评--%>
+    <div class="pages">
+        <%--当前页面号--%>
+        <input type="hidden" id="currPageNo" value="1"/>
+        <input type="hidden" id="pageCount" value="1"/>
+        <button id="firstBtn" onclick="clickFirst()" class="btn btn-primary">首页</button>
+        <button id="preBtn" onclick="clickPre()" class="btn btn-primary">上一页</button>
+        <button id="nextBtn" onclick="clickNext()" class="btn btn-primary">下一页</button>
+        <button id="lastBtn" onclick="clickLast()" class="btn btn-primary">最后一页</button>
+    </div>
     <div class="movie_score" id="movie_score">
         <div class="score_head">
             <span>添加收藏：写短评</span> <input type="button" value="关闭"
                                          onclick="cancel();"/>
         </div>
         <div class="score_mid">
-            <span class="s1">给个评分吧1~10噢</span>
-            <input id="score2" class="score" type="text"/>
-            <span class="s2">简短评论</span>
+            <span class="s1">给个评分吧1~10噢</span> 
+            <input id="score2" class="score" type="text"/> 
+            <span class="s2">简短评论</span> 
             <span id="num" class="num">140</span>
-            <textarea id="textarea" name="content" maxlength="140"></textarea>
+            <textarea id="textarea" maxlength="140"></textarea>
         </div>
 
         <div class="score_fool">
             <input id="save" type="button" value="保存" onclick="save();"/>
         </div>
-    </div>
-    <div class="long">
-        <p class="title">
-            <i class="">独自在夜晚的海边的影评</i>· · · · · ·
-        </p>
-        <a class="writeshort" id="writelong" href="longView.jsp">我要写影评</a>
-        <div id="filmCritics">
-            <%--长评论--%>
-        </div>
-        <a href="/more" class="others">>查看剩余评论</a>
     </div>
 </div>
 <div class="footer">

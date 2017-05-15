@@ -15,21 +15,21 @@ $(document).ready(function () {
         contentType: 'application/json',
         data:JSON.stringify(params),
         success:function (data) {
-            for (var i in data.filmCommentsList){
+            for (var i in data.filmCommentsVoList){
 
-                var score = data.filmCommentsList[i].score;
+                var score = data.filmCommentsVoList[i].score;
                 var _star = getStar(score);
                 var _div = "<div class='comment-item'>"+
                     "<div class='comment'>"+
                     "<h3>"+
                     "<span class='comment-info'>"+
-                    "<a href='#' class='name'>"+data.filmCommentsList[i].userId+"</a>"+
+                    "<a href='#' class='name'>"+data.filmCommentsVoList[i].userName+"</a>"+
                     "<span>看过</span>"+
-                    "<span class='comment-time' title='2017-02-19 18:24:10'>"+new Date(data.filmCommentsList[i].createTime).toLocaleString()+"</span>"+
-                    "<span class='score1'>&nbsp;&nbsp;评分&nbsp;&nbsp;&nbsp;<i id='scores'></i>"+data.filmCommentsList[i].score + _star +"</span>"+
+                    "<span class='comment-time' title='2017-02-19 18:24:10'>"+new Date(data.filmCommentsVoList[i].createTime).toLocaleString()+"</span>"+
+                    "<span class='score1'>&nbsp;&nbsp;评分&nbsp;&nbsp;&nbsp;<i id='scores'></i>"+data.filmCommentsVoList[i].score + _star +"</span>"+
                     "</span>"+
                     "</h3>"+
-                    "<p class='content1'>"+data.filmCommentsList[i].content+"</p>"+
+                    "<p class='content1'>"+data.filmCommentsVoList[i].content+"</p>"+
                     "</div>"+
                     "</div>";
                 $("#filmComments").append(_div);
